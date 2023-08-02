@@ -5,11 +5,7 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
+	"hostRequirements": {"cpus": 8},
 	"forwardPorts": [
 		8080,
 		3306
@@ -30,7 +26,4 @@
 	},
 
 	"postAttachCommand": "composer install && ./flow && ./flow doctrine:migrate ./flow user:create admin admin Neos Admin && ./flow user:addrole admin Administrator"
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }
