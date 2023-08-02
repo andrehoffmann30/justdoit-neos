@@ -23,12 +23,13 @@
 			"extensions": [
 				"DEVSENSE.phptools-vscode",
 				"networkteam.neos-fusion",
-				"SimonSchmidt.vscode-neos-fusion-lsp"
+				"SimonSchmidt.vscode-neos-fusion-lsp",
+				"DEVSENSE.composer-php-vscode"
 			]
 		}
 	},
 
-	"postAttachCommand": "composer install && ./flow && ./flow user:create admin admin Neos Admin && ./flow user:addrole admin Administrator"
+	"postAttachCommand": "composer install && ./flow && ./flow doctrine:migrate ./flow user:create admin admin Neos Admin && ./flow user:addrole admin Administrator"
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
