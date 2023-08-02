@@ -1,6 +1,6 @@
 version: '3.8'
 
-services: 
+services:
   app:
     build:
       context: .
@@ -8,6 +8,9 @@ services:
 
     volumes:
       - ../..:/workspaces:cached
+    environment:
+      - XDEBUG_MODE=debug
+      - FLOW_HTTP_TRUSTED_PROXIES=*
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
@@ -15,7 +18,7 @@ services:
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
     network_mode: service:db
 
-    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
+    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
   db:
@@ -31,6 +34,6 @@ services:
 
     # Add "forwardPorts": ["3306"] to **devcontainer.json** to forward MariaDB locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
-  
+
 volumes:
   mariadb-data:

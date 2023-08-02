@@ -1,0 +1,9 @@
+Neos:
+  Flow:
+    persistence:
+      backendOptions:
+        driver: pdo_mysql
+        host: 127.0.0.1
+        dbname: mariadb
+        user: mariadb
+        password: mariadb

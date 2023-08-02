@@ -17,13 +17,18 @@
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
 		"ghcr.io/devcontainers/features/node:1": {}
-	}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"DEVSENSE.phptools-vscode",
+				"networkteam.neos-fusion",
+				"SimonSchmidt.vscode-neos-fusion-lsp"
+			]
+		}
+	},
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
-
-	// Configure tool-specific properties.
-	// "customizations": {},
+	"postAttachCommand": "composer install && ./flow && ./flow user:create admin admin Neos Admin && ./flow user:addrole admin Administrator"
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
