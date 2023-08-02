@@ -25,5 +25,5 @@
 		}
 	},
 
-	"postAttachCommand": "composer install && ./flow && ./flow doctrine:migrate ./flow user:create admin admin Neos Admin && ./flow user:addrole admin Administrator"
+	"postAttachCommand": "composer install && ./flow && ./flow doctrine:migrate && ./flow user:create admin admin Neos Admin && ./flow user:addrole admin Administrator"
 }
