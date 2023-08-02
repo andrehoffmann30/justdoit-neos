@@ -5,7 +5,7 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"hostRequirements": {"cpus": 8},
+	"hostRequirements": {"cpus": 4},
 	"forwardPorts": [
 		8080,
 		3306
